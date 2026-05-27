@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "Set-Location 'C:\\Users\\marti\\Desktop\\claude code'; git add .; git diff --cached --quiet; if ($LASTEXITCODE -ne 0) { git commit -m \"auto-save: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')\"; git push }",
+            "timeout": 30,
+            "statusMessage": "Guardando cambios en GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}
